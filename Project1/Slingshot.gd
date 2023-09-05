@@ -21,8 +21,8 @@ func _ready():
 	LeftLine = $LeftLine
 	RightLine = $RightLine
 	CenterOfSlingshot = $CenterOfSlingshot.position
-	LeftLine.point[1] = CenterOfSlingshot
-	RightLine.point[1] = CenterOfSlingshot
+	LeftLine.points[1] = CenterOfSlingshot
+	RightLine.points[1] = CenterOfSlingshot
 	var player = get_tree().get_nodes_in_group("Player")[0]
 	player.position = CenterOfSlingshot
 	pass # Replace with function body.
@@ -39,7 +39,7 @@ func _process(delta):
 				
 				var distance = get_global_mouse_position()
 				if distance.distance_to(CenterOfSlingshot) > 100:
-					distance = (distance - CenterOfSlingshot).normalized() * 100 + CenterOfSlingshot
+					distance = (distance - CenterOfSlingshot).normalized() * 100 + $CenterOfSlingshot.position
 				player.position = distance
 				LeftLine.points[1] = distance
 				RightLine.points[1] = distance
@@ -52,8 +52,8 @@ func _process(delta):
 				player = player as RigidBody2D
 				player.apply_impulse(Vector2(), velocity/50 * distance)
 				SlingShotState = SlingState.birdThrown
-				LeftLine.point[1] = CenterOfSlingshot
-				RightLine.point[1] = CenterOfSlingshot
+				LeftLine.points[1] = CenterOfSlingshot
+				RightLine.points[1] = CenterOfSlingshot
 				
 				GameManager.CurrentGameState = GameManager.GameState.Play
 				get_tree().get_nodes_in_group("Camera")[0].followingPlayer = true

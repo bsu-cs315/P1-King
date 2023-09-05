@@ -81,6 +81,7 @@ sources/0 = SubResource("TileSetAtlasSource_n6p0y")
 [node name="Slingshot" parent="." instance=ExtResource("1_n7tk8")]
 
 [node name="Bird" parent="." instance=ExtResource("2_nwg6y")]
+position = Vector2(9, -50)
 
 [node name="Camera2D" type="Camera2D" parent="Bird" groups=["Camera"]]
 script = ExtResource("3_24w3m")
