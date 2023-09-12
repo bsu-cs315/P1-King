@@ -6,29 +6,33 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_8rlvy"]
 radius = 62.6259
 
-[node name="Slingshot" type="Node2D"]
+[node name="Slingshot" type="Node2D" groups=["Slingshot"]]
 script = ExtResource("1_86nu1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.400002, -1)
 texture = ExtResource("2_ihxgi")
 
 [node name="LeftLine" type="Line2D" parent="."]
+position = Vector2(-0.400002, -1)
 points = PackedVector2Array(21, -68, -80, -62)
 width = 5.6
 
 [node name="RightLine" type="Line2D" parent="."]
+position = Vector2(-0.400002, -1)
 points = PackedVector2Array(-15, -66, -80, -62)
 width = 5.6
 
 [node name="TouchArea" type="Area2D" parent="."]
+position = Vector2(-0.400002, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TouchArea"]
 position = Vector2(0, -47)
 shape = SubResource("CircleShape2D_8rlvy")
 
 [node name="CenterOfSlingshot" type="Marker2D" parent="."]
-position = Vector2(12, -63)
+position = Vector2(11.6, -64)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="ShotArc" type="Line2D" parent="."]
 
 [connection signal="input_event" from="TouchArea" to="." method="_on_touch_area_input_event"]

@@ -1,0 +1,34 @@
+[gd_scene load_steps=2 format=3 uid="uid://dgmg5lluawvnp"]
+
+[ext_resource type="Script" path="res://InterfaceController.gd" id="1_bpi2r"]
+
+[node name="InterfaceController" type="CanvasLayer" groups=["InterfaceController"]]
+script = ExtResource("1_bpi2r")
+
+[node name="InterfaceController" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -970.0
+offset_bottom = -562.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreLabel" type="RichTextLabel" parent="InterfaceController"]
+modulate = Color(0, 0.0352941, 0.0313726, 1)
+layout_mode = 0
+offset_left = 59.0
+offset_top = 42.0
+offset_right = 114.0
+offset_bottom = 82.0
+text = "Score:"
+
+[node name="ScoreValue" type="RichTextLabel" parent="InterfaceController"]
+modulate = Color(0, 0.0352941, 0.0313726, 1)
+layout_mode = 0
+offset_left = 109.0
+offset_top = 44.0
+offset_right = 280.0
+offset_bottom = 84.0
+text = "1000"
