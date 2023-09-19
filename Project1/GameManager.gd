@@ -17,7 +17,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	get_tree().get_nodes_in_group("InterfaceController")[0].SetScore()
+	#get_tree().get_nodes_in_group("InterfaceController")[0].SetScore()
 	match CurrentGameState:
 		GameState.Start:
 			pass
